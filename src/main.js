@@ -173,7 +173,7 @@ function animateReveals() {
     );
   });
 
-  // About-body words bounce into place as each paragraph enters.
+  // About-body words keep the scroll opacity reveal, with a softer bounce into place.
   document.querySelectorAll('[data-fade-words]').forEach((el) => {
     const split = new SplitType(el, { types: 'words', tagName: 'span' });
     if (!split.words || !split.words.length) return;
@@ -186,20 +186,19 @@ function animateReveals() {
 
     gsap.fromTo(
       split.words,
-      { opacity: 0, y: 22, scale: 0.94, rotateX: -18 },
+      { opacity: 0.16, y: 24, scale: 0.93, rotateX: -16 },
       {
         opacity: 1,
         y: 0,
         scale: 1,
         rotateX: 0,
-        duration: 0.9,
-        ease: 'back.out(2.3)',
-        stagger: 0.018,
+        ease: 'back.out(1.8)',
+        stagger: 0.035,
         scrollTrigger: {
           trigger: el,
           start: 'top 84%',
-          end: 'bottom 62%',
-          toggleActions: 'play none none reverse',
+          end: 'bottom 58%',
+          scrub: 0.55,
         },
       }
     );

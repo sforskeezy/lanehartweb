@@ -605,20 +605,20 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   text-wrap: pretty;
 }
 
-/* Full-image service cards */
+/* Full-image service bento */
 .bento {
   position: relative;
   max-width: var(--maxw);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.95fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: clamp(0.7rem, 1.2vw, 1rem);
-  min-height: 0;
+  min-height: clamp(460px, 58vh, 620px);
 }
 .bento__card {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  min-height: 0;
   border-radius: clamp(18px, 1.6vw, 26px);
   overflow: hidden;
   background: var(--ink);
@@ -633,16 +633,14 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 30px 60px -20px rgba(10,15,13,0.5);
 }
 .bento__card--featured {
-  grid-row: auto;
+  grid-row: 1 / span 2;
 }
 
 /* Image layer — contain keeps full branded artwork visible at any card aspect */
 .bento__media {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 0;
-  flex: 0 0 auto;
-  width: 100%;
-  aspect-ratio: 1672 / 941;
   background-image: var(--bento-img);
   background-color: #050806;
   background-size: contain;
@@ -658,43 +656,46 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
 .bento__media::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 100%);
+    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 50%, rgba(10,15,13,0.78) 100%);
 }
 .bento__card:nth-child(1) .bento__media::after {
   background:
-    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 100%);
+    radial-gradient(ellipse 80% 60% at 28% 18%, rgba(0,112,60,0.12), transparent 62%),
+    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 50%, rgba(10,15,13,0.8) 100%);
 }
 .bento__card:nth-child(3) .bento__media::after {
   background:
-    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 100%);
+    radial-gradient(ellipse 80% 60% at 80% 25%, rgba(244,188,22,0.12), transparent 62%),
+    linear-gradient(180deg, rgba(10,15,13,0) 0%, rgba(10,15,13,0.08) 50%, rgba(10,15,13,0.8) 100%);
 }
 
 /* Content */
 .bento__content {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
-  justify-content: flex-start;
-  min-height: clamp(225px, 18vw, 285px);
-  padding: clamp(1.15rem, 1.8vw, 1.55rem);
-  gap: clamp(0.5rem, 0.8vw, 0.75rem);
+  justify-content: flex-end;
+  padding: clamp(2.5rem, 7vw, 4rem) clamp(0.9rem, 1.55vw, 1.35rem) clamp(0.9rem, 1.45vw, 1.25rem);
+  gap: clamp(0.34rem, 0.55vw, 0.52rem);
   background:
-    linear-gradient(180deg, rgba(20,31,26,0.98) 0%, rgba(8,13,11,1) 100%);
+    linear-gradient(180deg, rgba(8,13,11,0) 0%, rgba(8,13,11,0.76) 44%, rgba(8,13,11,0.95) 100%);
 }
 .bento__num {
   font-family: var(--display);
   font-weight: 700;
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
 }
 .bento__title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+  font-size: clamp(1.22rem, 1.85vw, 1.75rem);
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -713,29 +714,34 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   display: inline;
 }
 .bento__card--featured .bento__title {
-  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
-  max-width: none;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  max-width: 14ch;
 }
 .bento__copy {
   margin: 0;
-  font-size: clamp(0.88rem, 0.95vw, 0.96rem);
-  line-height: 1.48;
+  font-size: clamp(0.78rem, 0.82vw, 0.86rem);
+  line-height: 1.38;
   color: rgba(243,239,231,0.78);
   max-width: none;
   text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .bento__card--featured .bento__copy {
-  font-size: clamp(0.88rem, 0.95vw, 0.96rem);
-  max-width: none;
+  font-size: clamp(0.82rem, 0.92vw, 0.95rem);
+  max-width: 46ch;
+  -webkit-line-clamp: 3;
 }
 .bento__cta {
-  margin-top: auto;
+  margin-top: 0.05rem;
   display: inline-flex; align-items: center; gap: 0.5rem;
   width: fit-content;
   font-family: var(--display);
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--paper);
   padding-top: 0.35rem;
@@ -753,20 +759,13 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
 }
 .bento__cta:hover svg { transform: translateX(5px); }
 
-@media (max-width: 1100px) {
-  .bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .bento__card--featured {
-    grid-column: 1 / -1;
-  }
-}
-
 @media (max-width: 880px) {
   .bento {
     display: flex;
     flex-direction: row;
     grid-template-columns: none;
+    grid-template-rows: none;
+    min-height: 0;
     gap: 0.8rem;
 
     overflow-x: auto;
@@ -789,23 +788,25 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
     flex: 0 0 clamp(300px, 84vw, 420px);
     grid-column: auto;
     grid-row: auto;
+    aspect-ratio: 4 / 5;
     max-width: calc(100vw - var(--pad-x) * 2);
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
   .bento__content {
-    min-height: auto;
-    padding: clamp(1.1rem, 4vw, 1.45rem);
+    padding: clamp(2.5rem, 10vw, 3.4rem) clamp(0.95rem, 4vw, 1.2rem) clamp(0.95rem, 4vw, 1.2rem);
+    gap: 0.42rem;
   }
   .bento__title,
   .bento__card--featured .bento__title {
-    font-size: clamp(1.55rem, 6.8vw, 2.35rem);
-    max-width: 13ch;
+    font-size: clamp(1.35rem, 5.7vw, 1.95rem);
+    max-width: 12ch;
   }
   .bento__copy,
   .bento__card--featured .bento__copy {
-    font-size: clamp(0.9rem, 3.5vw, 0.98rem);
-    line-height: 1.45;
+    font-size: clamp(0.8rem, 3.2vw, 0.9rem);
+    line-height: 1.38;
+    -webkit-line-clamp: 3;
   }
 }
 
