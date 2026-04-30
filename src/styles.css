@@ -463,9 +463,14 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   text-transform: uppercase;
   margin: 0;
   color: var(--ink);
-  text-wrap: balance;
-  max-width: 18ch;
+  max-width: none;
 }
+/* Exactly two lines: one sentence per line (no mid-sentence wraps). */
+.about__headline-line {
+  display: block;
+  white-space: nowrap;
+}
+
 .about__headline em {
   font-family: var(--serif);
   font-style: italic;
@@ -629,17 +634,18 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   grid-row: 1 / span 2;
 }
 
-/* Image layer */
+/* Image layer — contain keeps full branded artwork visible at any card aspect */
 .bento__media {
   position: absolute; inset: 0; z-index: 0;
+  background-color: var(--ink);
   background-image: var(--bento-img);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
-  transition: transform 0.9s var(--ease-out), filter 0.9s var(--ease-out);
+  transition: filter 0.9s var(--ease-out);
   filter: saturate(105%) brightness(0.95);
 }
 .bento__card:hover .bento__media {
-  transform: scale(1.06);
   filter: saturate(115%) brightness(1);
 }
 /* Brand-tinted gradient overlay so cards feel cohesive */
@@ -1272,9 +1278,13 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   .hero { padding-top: 5.5rem; }
   .hero__logo { width: 84vw; max-width: 360px; }
 
-  .about__headline,
   .services__title,
   .partners__title { font-size: clamp(2rem, 9vw, 3rem); }
+  /* Two nowrap lines — keep type small enough for ~320px wide viewports */
+  .about__headline {
+    font-size: clamp(1.15rem, 5.2vw, 2.05rem);
+    line-height: 1.06;
+  }
   .contact__title { font-size: clamp(2.2rem, 11vw, 3.4rem); }
 
   .stats { grid-template-columns: repeat(2, 1fr); }
