@@ -173,22 +173,33 @@ function animateReveals() {
     );
   });
 
-  // About-body word-by-word opacity scrub (Apple-style scroll reveal)
+  // About-body words bounce into place as each paragraph enters.
   document.querySelectorAll('[data-fade-words]').forEach((el) => {
     const split = new SplitType(el, { types: 'words', tagName: 'span' });
     if (!split.words || !split.words.length) return;
+
+    split.words.forEach((word) => {
+      word.style.display = 'inline-block';
+      word.style.transformOrigin = '50% 100%';
+      word.style.willChange = 'transform, opacity';
+    });
+
     gsap.fromTo(
       split.words,
-      { opacity: 0.18 },
+      { opacity: 0, y: 22, scale: 0.94, rotateX: -18 },
       {
         opacity: 1,
-        ease: 'none',
-        stagger: 0.05,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 0.9,
+        ease: 'back.out(2.3)',
+        stagger: 0.018,
         scrollTrigger: {
           trigger: el,
-          start: 'top 82%',
-          end: 'bottom 60%',
-          scrub: 0.6,
+          start: 'top 84%',
+          end: 'bottom 62%',
+          toggleActions: 'play none none reverse',
         },
       }
     );
