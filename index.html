@@ -78,35 +78,40 @@
     </header>
 
     <main id="smooth-content">
-      <!-- HERO -->
-      <section class="hero" id="hero" data-section>
-        <div class="hero__media" aria-hidden="true">
-          <img
-            class="hero__image"
-            src="/hero.jpg"
-            alt=""
-            decoding="async"
+      <!-- HERO — logo centered over blurred stock video -->
+      <section class="hero" id="hero">
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="/hero.jpg"
+          aria-hidden="true"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/5698648/5698648-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
           />
-          <div class="hero__veil"></div>
-        </div>
+        </video>
+        <div class="hero__veil" aria-hidden="true"></div>
 
-        <div class="hero__center">
-          <img
-            class="hero__logo"
-            src="https://lanehart.com/wp-content/uploads/2015/01/LEC-horizontal-pms-349_white_trans1.png"
-            alt="Lanehart Electrical Contractors"
-            decoding="async"
-          />
-          <p class="hero__tag">Residential Electrical Excellence · Six decades of current</p>
-          <div class="hero__meta">
-            <a href="#services" class="btn btn--primary">
-              <span>Explore Services</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
-            </a>
-            <a href="tel:8777217500" class="btn btn--ghost">
-              <span>877.721.7500</span>
-            </a>
-          </div>
+        <div class="hero__inner">
+          <h1 class="hero__lockup">
+            <img
+              class="hero__logo"
+              src="https://lanehart.com/wp-content/uploads/2015/01/LEC-horizontal-pms-349_white_trans1.png"
+              alt="Lanehart Electrical Contractors"
+            />
+          </h1>
+          <p class="hero__sub">
+            Six decades of residential current. Irving, Texas.
+          </p>
+          <a href="tel:8777217500" class="hero__phone">
+            <span>877.721.7500</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+          </a>
         </div>
       </section>
 

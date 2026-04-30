@@ -297,95 +297,100 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
 }
 
 /* =====================================================
-   HERO  (image bg, simple, centered logo)
+   HERO — centered logo over blurred stock video
    ===================================================== */
 .hero {
   position: relative;
   min-height: 100svh;
-  color: var(--paper);
-  display: grid;
-  place-items: center;
-  padding: clamp(6rem, 12vh, 9rem) var(--pad-x) clamp(3rem, 6vh, 4rem);
-  overflow: hidden;
-  isolation: isolate;
   background: var(--ink);
-}
-
-.hero__media {
-  position: absolute; inset: 0; z-index: -1;
-  overflow: hidden;
-}
-.hero__image {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  /* slight upscale so the blur edge feathers off-screen */
-  transform: scale(1.08);
-  filter: blur(10px) saturate(108%);
-  will-change: transform, filter;
-}
-.hero__veil {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 65% at 50% 50%, rgba(10,15,13,0.30) 0%, rgba(10,15,13,0.70) 100%),
-    linear-gradient(180deg, rgba(10,15,13,0.40) 0%, rgba(10,15,13,0.50) 50%, rgba(10,15,13,0.78) 100%);
-}
-
-.hero__center {
+  color: var(--paper);
+  padding: clamp(7rem, 14vh, 10rem) var(--pad-x) clamp(3rem, 5vh, 4rem);
   text-align: center;
   display: grid;
-  justify-items: center;
-  gap: clamp(1.25rem, 2.4vw, 1.75rem);
-  max-width: 980px;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) brightness(0.78) saturate(0.95);
+  transform: scale(1.06);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(10,15,13,0.30) 0%, rgba(10,15,13,0.18) 40%, rgba(10,15,13,0.45) 100%);
+}
+
+.hero__inner {
+  position: relative; z-index: 2;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vh, 2.4rem);
 }
 
-.hero__logo {
-  width: clamp(280px, 52vw, 720px);
-  height: auto;
-  filter: drop-shadow(0 12px 48px rgba(0,0,0,0.55));
-}
-
-.hero__tag {
+.hero__lockup {
   margin: 0;
-  font-family: var(--display);
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(243,239,231,0.85);
-  font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+  display: block;
+  line-height: 0;
+}
+.hero__logo {
+  width: clamp(280px, 42vw, 600px);
+  height: auto;
+  filter: drop-shadow(0 14px 50px rgba(0,0,0,0.55));
 }
 
-.hero__meta {
-  display: flex; gap: 0.75rem; flex-wrap: wrap;
-  justify-content: center;
+.hero__sub {
+  margin: 0;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  line-height: 1.55;
+  color: rgba(243,239,231,0.88);
+  max-width: 40ch;
+  letter-spacing: 0.005em;
+}
+
+.hero__phone {
+  display: inline-flex; align-items: center; gap: 0.7rem;
   margin-top: 0.4rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  letter-spacing: 0.04em;
+  color: var(--paper);
+  border-bottom: 2px solid var(--paper);
+  padding: 0.2rem 0 0.45rem;
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+.hero__phone svg {
+  width: 18px; height: 18px;
+  transition: transform 0.45s var(--ease-out);
+}
+.hero__phone:hover { color: var(--gold); border-color: var(--gold); }
+.hero__phone:hover svg { transform: translateX(5px) rotate(-8deg); }
+
+@media (max-width: 720px) {
+  .hero__logo { width: 78vw; }
+  .hero__sub { font-size: 0.95rem; }
 }
 
-.btn {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  padding: 0.95rem 1.4rem 0.9rem;
-  font-family: var(--display);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  border-radius: 999px;
-  transition: transform 0.4s var(--ease-out), background 0.3s ease, color 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  .hero__video { display: none; }
+  .hero { background: var(--ink) url('/hero.jpg') center/cover no-repeat; }
 }
-.btn svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease-out); }
-.btn:hover svg { transform: translateX(4px); }
-.btn--primary {
-  background: var(--green-600);
-  color: var(--paper);
-  border: 1px solid var(--green-600);
-}
-.btn--primary:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-.btn--ghost {
-  border: 1px solid rgba(243,239,231,0.35);
-  color: var(--paper);
-}
-.btn--ghost:hover { background: rgba(243,239,231,0.08); }
 
 
 /* =====================================================
@@ -722,17 +727,42 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
 }
 .bento__cta:hover svg { transform: translateX(5px); }
 
-/* ── Mobile ── */
+/* ── Mobile: horizontal swipe carousel ── */
 @media (max-width: 880px) {
   .bento {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: none;
+    grid-template-rows: none;
     min-height: 0;
+    gap: 0.8rem;
+
+    /* Snap-scroll horizontally, full-bleed past container padding */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--pad-x);
+    scroll-padding-right: var(--pad-x);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    width: calc(100% + var(--pad-x) * 2);
+    margin-left: calc(var(--pad-x) * -1);
+    margin-right: calc(var(--pad-x) * -1);
+    padding: 0.5rem var(--pad-x) 1rem;
   }
-  .bento__card { aspect-ratio: 4 / 5; }
-  .bento__card--featured { grid-row: auto; aspect-ratio: 4 / 5; }
+  .bento::-webkit-scrollbar { display: none; }
+
+  .bento__card,
+  .bento__card--featured {
+    grid-row: auto;
+    flex: 0 0 78vw;
+    max-width: 360px;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: start;
+  }
   .bento__title { font-size: clamp(1.6rem, 8vw, 2.4rem); }
-  .bento__card--featured .bento__title { font-size: clamp(2rem, 10vw, 3rem); }
+  .bento__card--featured .bento__title { font-size: clamp(2rem, 9vw, 2.8rem); }
 }
 
 /* =====================================================

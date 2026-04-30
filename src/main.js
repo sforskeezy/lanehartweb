@@ -116,14 +116,23 @@ function initSmoothScroll() {
 }
 
 /* -------------------------------------------------
-   Hero entrance — content reveal only, no bg motion
+   Hero entrance — logo + supporting copy
    ------------------------------------------------- */
 function animateHero() {
   const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
-  tl.from('.hero__logo', { y: 40, opacity: 0, scale: 0.97, duration: 1.1 }, 0.15)
-    .from('.hero__tag', { y: 20, opacity: 0, duration: 0.8 }, 0.5)
-    .from('.hero__meta > *', { y: 18, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.7);
+  tl.from('.hero__logo', { y: 30, opacity: 0, scale: 0.96, duration: 1.15 }, 0.2)
+    .from('.hero__sub',  { y: 18, opacity: 0, duration: 0.85 }, 0.55)
+    .from('.hero__phone',{ y: 16, opacity: 0, duration: 0.75 }, 0.75);
+
+  // gentle slow zoom on the blurred video for a touch of motion
+  gsap.to('.hero__video', {
+    scale: 1.18,
+    duration: 18,
+    ease: 'none',
+    yoyo: true,
+    repeat: -1,
+  });
 }
 
 /* -------------------------------------------------
