@@ -301,7 +301,9 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
    ===================================================== */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: calc(100svh - clamp(1.5rem, 3vw, 3rem));
+  margin: clamp(0.75rem, 1.5vw, 1.5rem);
+  border-radius: clamp(22px, 2.4vw, 38px);
   background: var(--ink);
   color: var(--paper);
   padding: clamp(7rem, 14vh, 10rem) var(--pad-x) clamp(3rem, 5vh, 4rem);
@@ -310,6 +312,14 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   place-items: center;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: 0 30px 80px -40px rgba(10,15,13,0.35);
+}
+@media (max-width: 720px) {
+  .hero {
+    margin: 0.55rem;
+    border-radius: 18px;
+    min-height: calc(100svh - 1.1rem);
+  }
 }
 
 .hero__video {
@@ -1230,10 +1240,11 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   [data-section] { padding: clamp(3.5rem, 8vh, 6rem) var(--pad-x); }
   .section-head { margin-bottom: 1.5rem; }
 
-  /* About — stack neatly */
+  /* About — stack neatly, drop the 2nd paragraph for length */
   .about__grid { gap: 1.6rem; }
   .about__body { max-width: 100%; }
   .about__body p { font-size: 0.98rem; }
+  .about__body p:nth-of-type(2) { display: none; }
 
   /* Services — bento + intro */
   .services__intro { gap: 1.2rem; margin-bottom: 1.6rem; }
@@ -1257,17 +1268,9 @@ ul, ol { list-style: none; padding: 0; margin: 0; }
   .nav__logo img { height: 24px; }
   .nav__burger { width: 38px; height: 38px; }
 
-  /* Hero */
-  .hero { min-height: 92svh; padding-top: 5.5rem; }
+  /* Hero — slightly tighter inset on phones */
+  .hero { padding-top: 5.5rem; }
   .hero__logo { width: 84vw; max-width: 360px; }
-  .hero__tag { font-size: 0.66rem; letter-spacing: 0.22em; }
-  .hero__meta { flex-direction: column; gap: 0.6rem; width: 100%; }
-  .hero__meta .btn { width: 100%; justify-content: center; }
-  .hero__veil {
-    background:
-      radial-gradient(ellipse 100% 60% at 50% 50%, transparent 0%, rgba(10,15,13,0.60) 100%),
-      linear-gradient(180deg, rgba(10,15,13,0.40), rgba(10,15,13,0.80));
-  }
 
   .about__headline,
   .services__title,
