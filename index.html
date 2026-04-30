@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0F0D" />
+    <title>Lanehart Electrical Contractors — 60 Years of Service</title>
+    <meta
+      name="description"
+      content="Lanehart Electrical Contractors. Six decades of residential electrical excellence. Whole-house automation, EV charging, security, generators, and more."
+    />
+
+    <link rel="icon" href="https://lanehart.com/wp-content/uploads/2015/01/cropped-logo-512-2-1-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="https://lanehart.com/wp-content/uploads/2015/01/cropped-logo-512-2-1-180x180.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- Top navigation -->
+    <header class="nav" id="nav">
+      <!-- Main bar -->
+      <div class="nav__main">
+        <div class="nav__main-inner">
+          <a href="#hero" class="nav__logo" aria-label="Lanehart Electrical home">
+            <img
+              src="https://lanehart.com/wp-content/uploads/2015/01/LEC-horizontal-pms-349_white_trans1.png"
+              alt="Lanehart Electrical Contractors"
+              decoding="async"
+            />
+          </a>
+          <nav class="nav__links" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#partners">Partners</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="nav__main-right">
+            <a href="tel:8777217500" class="nav__phone">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.2 2.3z"/></svg>
+              <span>877.721.7500</span>
+            </a>
+            <a href="#contact" class="nav__cta">
+              Request Service
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+            </a>
+            <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+              <span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div class="nav__drawer" id="navDrawer" aria-hidden="true">
+        <div class="nav__drawer-links">
+          <a href="#about"><span>01</span> About</a>
+          <a href="#services"><span>02</span> Services</a>
+          <a href="#partners"><span>03</span> Partners</a>
+          <a href="#contact"><span>04</span> Contact</a>
+        </div>
+        <div class="nav__drawer-foot">
+          <a href="tel:8777217500" class="nav__drawer-phone">877.721.7500</a>
+          <p class="nav__drawer-meta">Mon – Fri  8:00 – 17:00 CT<br>Irving, TX</p>
+          <ul class="nav__socials nav__socials--big" aria-label="Social">
+            <li><a href="https://www.instagram.com/lanehartelectrical/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.22.42.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.37 1.05.42 2.22.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.42 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.37-2.22.42-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.22-.42a3.7 3.7 0 0 1-1.38-.89 3.7 3.7 0 0 1-.89-1.38c-.17-.42-.37-1.05-.42-2.22C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.42-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.37 2.22-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.51 0-4.74.06-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.27.83-.39.39-.63.76-.83 1.27-.15.39-.33.97-.38 2.04C2.68 9.49 2.68 9.86 2.68 12s0 2.51.06 3.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.83 1.27.39.39.76.63 1.27.83.39.15.97.33 2.04.38 1.23.06 1.6.06 4.74.06s3.51 0 4.74-.06c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.27-.83.39-.39.63-.76.83-1.27.15-.39.33-.97.38-2.04.06-1.23.06-1.6.06-3.74s0-2.51-.06-3.74c-.05-1.07-.23-1.65-.38-2.04a3.4 3.4 0 0 0-.83-1.27 3.4 3.4 0 0 0-1.27-.83c-.39-.15-.97-.33-2.04-.38C15.51 4 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 17a4.94 4.94 0 0 1 0-9.94zm0 1.8A3.14 3.14 0 1 0 12 15.2a3.14 3.14 0 0 0 0-6.34zm5.16-2.04a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg></a></li>
+            <li><a href="https://www.facebook.com/LanehartElectrical/" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.4 22v-8.2h2.75l.41-3.2H13.4V8.55c0-.93.26-1.56 1.59-1.56h1.7V4.13a22.6 22.6 0 0 0-2.48-.13c-2.45 0-4.13 1.5-4.13 4.25v2.36H7.32v3.2h2.76V22h3.32z"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/company/lanehart-electrical-contractors/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11.5H3V9.5zm6.5 0H13.3v1.57h.05c.53-.95 1.83-1.95 3.77-1.95C20.99 9.12 22 11.4 22 14.7v6.3h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97V21H9.5V9.5z"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="smooth-content">
+      <!-- HERO -->
+      <section class="hero" id="hero" data-section>
+        <div class="hero__media" aria-hidden="true">
+          <img
+            class="hero__image"
+            src="/hero.jpg"
+            alt=""
+            decoding="async"
+          />
+          <div class="hero__veil"></div>
+        </div>
+
+        <div class="hero__center">
+          <img
+            class="hero__logo"
+            src="https://lanehart.com/wp-content/uploads/2015/01/LEC-horizontal-pms-349_white_trans1.png"
+            alt="Lanehart Electrical Contractors"
+            decoding="async"
+          />
+          <p class="hero__tag">Residential Electrical Excellence · Six decades of current</p>
+          <div class="hero__meta">
+            <a href="#services" class="btn btn--primary">
+              <span>Explore Services</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+            </a>
+            <a href="tel:8777217500" class="btn btn--ghost">
+              <span>877.721.7500</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about" data-section>
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <span class="section-label">About</span>
+        </div>
+        <div class="about__grid">
+          <h2 class="about__headline" data-split="words">
+            Quality that counts. <em>Relationships</em> that last.
+          </h2>
+          <div class="about__body">
+            <p data-fade-words>
+              Lanehart Electrical Contractors has built a reputation synonymous with service.
+              For sixty years we’ve quietly wired the homes Americans grow up in — from the first
+              Houston subdivisions of 1965 to the smart, EV-ready houses being framed today.
+            </p>
+            <p data-fade-words>
+              We are dedicated to quality workmanship, timely completion, competitive bids,
+              and meeting every customer expectation. With us, it’s the work that speaks.
+            </p>
+            <a href="#services" class="link-inline" data-reveal>
+              <span>Read what we do</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <ul class="stats" aria-label="Lanehart by the numbers">
+          <li>
+            <span class="stats__row">
+              <span class="stats__num" data-count-to="60">0</span><span class="stats__suf">+</span>
+            </span>
+            <span class="stats__label">Years in business</span>
+          </li>
+          <li>
+            <span class="stats__row">
+              <span class="stats__num" data-count-to="12">0</span><span class="stats__suf">+</span>
+            </span>
+            <span class="stats__label">U.S. markets served</span>
+          </li>
+          <li>
+            <span class="stats__row">
+              <span class="stats__num" data-count-to="22">0</span><span class="stats__suf">+</span>
+            </span>
+            <span class="stats__label">National builder partners</span>
+          </li>
+          <li>
+            <span class="stats__row">
+              <span class="stats__num" data-count-to="100">0</span><span class="stats__suf">k+</span>
+            </span>
+            <span class="stats__label">Homes safely wired</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SERVICES — bento -->
+      <section class="services" id="services" data-section>
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <span class="section-label">Services</span>
+        </div>
+
+        <div class="services__intro">
+          <h2 class="services__title" data-split="words">
+            New technology, <em>new opportunities.</em>
+          </h2>
+          <p class="services__lede" data-highlight>
+            Three core services — wired, automated, and protected. One source for every system in the home.
+          </p>
+        </div>
+
+        <div class="bento" data-bento>
+          <article class="bento__card bento__card--featured" data-bento-card style="--bento-img: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');">
+            <div class="bento__media" aria-hidden="true"></div>
+            <div class="bento__content">
+              <span class="bento__num">Core Service</span>
+              <h3 class="bento__title">Single&nbsp;Family <em>Wiring</em></h3>
+              <p class="bento__copy">Wiring residential homes for over sixty years has given us an unmatched level of expertise, a commitment to service, and a process that's highly efficient and cost-effective.</p>
+              <a href="#contact" class="bento__cta">
+                <span>Talk to us</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="bento__card" data-bento-card style="--bento-img: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80');">
+            <div class="bento__media" aria-hidden="true"></div>
+            <div class="bento__content">
+              <span class="bento__num">Smart Home</span>
+              <h3 class="bento__title">Whole-House <em>Automation</em></h3>
+              <p class="bento__copy">Control every light, appliance, and device on command. Monitor security remotely, conserve energy, and set the mood — all from one tap.</p>
+              <a href="#contact" class="bento__cta">
+                <span>Talk to us</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="bento__card" data-bento-card style="--bento-img: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80');">
+            <div class="bento__media" aria-hidden="true"></div>
+            <div class="bento__content">
+              <span class="bento__num">Family First</span>
+              <h3 class="bento__title">Residential <em>Security</em></h3>
+              <p class="bento__copy">State-of-the-art systems with remote camera monitoring and motion-activated alerts. Your family, professionally protected.</p>
+              <a href="#contact" class="bento__cta">
+                <span>Talk to us</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PARTNERS -->
+      <section class="partners" id="partners" data-section>
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <span class="section-label">Who We Work With</span>
+        </div>
+
+        <div class="partners__intro">
+          <h2 class="partners__title" data-split="words">
+            America’s most respected <em>builders</em> trust Lanehart.
+          </h2>
+          <p class="partners__lede" data-highlight>
+            From regional craftsmen to Fortune 500 homebuilders — twenty-two enduring partnerships,
+            wired house by house, market by market.
+          </p>
+        </div>
+
+        <!-- Animated logo grid (initial reveal) -->
+        <div class="partners__grid" id="partnersGrid">
+          <!-- Logos injected by JS for stagger control -->
+        </div>
+
+      </section>
+
+      <!-- CTA / CONTACT -->
+      <section class="contact" id="contact" data-section>
+        <div class="section-head">
+          <span class="section-num">04</span>
+          <span class="section-label">Contact</span>
+        </div>
+
+        <div class="contact__inner">
+          <h2 class="contact__title" data-split="words">
+            Let’s wire something <em>built to last.</em>
+          </h2>
+
+          <div class="contact__grid">
+            <a class="contact__card" href="tel:8777217500" data-reveal>
+              <span class="contact__card-label">Call</span>
+              <span class="contact__card-value">877.721.7500</span>
+              <span class="contact__card-sub">Mon – Fri · 08:00 – 17:00 CT</span>
+            </a>
+            <a class="contact__card" href="https://maps.google.com/?q=8001+Jetstar+Dr+STE+175+Irving+Texas+75063" target="_blank" rel="noopener" data-reveal>
+              <span class="contact__card-label">Visit</span>
+              <span class="contact__card-value">8001 Jetstar Dr, STE 175<br/>Irving, Texas 75063</span>
+              <span class="contact__card-sub">National headquarters</span>
+            </a>
+            <a class="contact__card" href="https://lanehart.com/contact/" data-reveal>
+              <span class="contact__card-label">Write</span>
+              <span class="contact__card-value">Request Service</span>
+              <span class="contact__card-sub">We’ll respond within one business day.</span>
+            </a>
+          </div>
+
+          <a href="tel:8777217500" class="contact__big" aria-label="Request service">
+            <span class="contact__big-text">Request&nbsp;Service</span>
+            <span class="contact__big-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h13l-5-5 1.4-1.4L21 12l-6.6 6.4L13 17l5-5H5z"/></svg>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__row">
+          <div class="footer__brand">
+            <img
+              class="footer__logo"
+              src="https://lanehart.com/wp-content/uploads/2015/01/LEC-horizontal-pms-349_white_trans1.png"
+              alt="Lanehart Electrical Contractors"
+            />
+            <p>Six decades of residential current.</p>
+          </div>
+          <ul class="footer__nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="footer__legal">
+            <p>© <span data-year>2026</span> Lanehart Electrical Contractors</p>
+            <p>Irving, Texas · Family-owned since 1965</p>
+          </div>
+        </div>
+
+        <div class="footer__credit">
+          Built by <a href="https://6point.design" target="_blank" rel="noopener">6point.design</a>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
